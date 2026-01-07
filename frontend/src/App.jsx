@@ -54,13 +54,13 @@ function App() {
         {/* Coin Selector */}
         <CoinSelector onSelectCoin={handleSelectCoin} />
 
-        {/* Panel 1: Cryptocurrency Detailed Analysis */}
+        {/* Cryptocurrency Detailed Analysis */}
         <Typography variant="h5" component="h1" gutterBottom>
           Detailed Analysis
         </Typography>
         <PriceChart selectedCoin={selectedCoin} />
 
-        {/* Panel 2: Top Gainers and Losers */}
+        {/*Top Gainers and Losers */}
         <Typography variant="h5" component="h1" gutterBottom sx={{ mt: 6 }}>
           Market Movers
         </Typography>
@@ -68,9 +68,6 @@ function App() {
 
         {/* Footer */}
         <Box mt={6} pt={3} borderTop={1} borderColor="divider">
-          <Typography variant="body2" color="text.secondary" align="center">
-            Data provided by CoinGecko API • Updates every 60 seconds
-          </Typography>
           <Typography variant="body2" color="text.secondary" align="center">
              Design By Kunal Mehta
           </Typography>

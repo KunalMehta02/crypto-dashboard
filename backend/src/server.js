@@ -8,10 +8,10 @@ const cryptoRoutes = require('./routes/cryptoRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Rate limiting
+
 const limiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
-  max: 100, // limit each IP to 50 requests per minute
+  max: 100, // limit each IP to 100 requests per minute
   message: 'Too many requests from this IP, please try again later.'
 });
 

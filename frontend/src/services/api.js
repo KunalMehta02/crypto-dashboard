@@ -10,7 +10,7 @@ const api = axios.create({
   },
 });
 
-// CoinGecko API service
+``
 export const cryptoAPI = {
   // Get market chart data
   getMarketChart: (coinId, days = 7) => 

@@ -24,7 +24,7 @@ const CoinSelector = ({ onSelectCoin }) => {
     
     try {
       const response = await cryptoAPI.getCoinList();
-      // Filter to show only popular coins for better UX
+      // Filter to show only popular coins
       const popularCoins = ['bitcoin', 'ethereum', 'cardano', 'solana', 'ripple', 
                           'polkadot', 'dogecoin', 'matic-network', 'litecoin'];
       

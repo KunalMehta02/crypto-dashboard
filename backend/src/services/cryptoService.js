@@ -1,6 +1,6 @@
 const axios = require('axios');
 const NodeCache = require('node-cache');
-const cache = new NodeCache({ stdTTL: 60 }); // Cache for 60 seconds
+const cache = new NodeCache({ stdTTL: 60 });
 
 const COINGECKO_API = 'https://api.coingecko.com/api/v3';
 
@@ -18,7 +18,7 @@ class CryptoService {
   async getMarketChart(coinId, days = 7, currency = 'usd') {
     const cacheKey = `market_chart_${coinId}_${days}_${currency}`;
     
-    // Check cache first
+
     const cachedData = cache.get(cacheKey);
     if (cachedData) {
       return cachedData;
@@ -39,7 +39,7 @@ class CryptoService {
         total_volumes: response.data.total_volumes
       };
 
-      // Cache the response
+ 
       cache.set(cacheKey, data);
       return data;
 
@@ -68,6 +68,7 @@ class CryptoService {
           sparkline: false
         }
       });
+      
 
       cache.set(cacheKey, response.data);
       return response.data;
@@ -132,7 +133,7 @@ class CryptoService {
     }
   }
 
-  // Get current price for a specific coin
+  // Get current price
   async getCurrentPrice(coinId, currency = 'usd') {
     try {
       const response = await axiosInstance.get('/simple/price', {
