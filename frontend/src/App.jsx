@@ -37,43 +37,44 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <TrendingUpIcon sx={{ mr: 2 }} />
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Crypto Dashboard
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </Box>
+<ThemeProvider theme={theme}>
+  <CssBaseline />
 
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        {/* Coin Selector */}
-        <CoinSelector onSelectCoin={handleSelectCoin} />
+  
+  <AppBar position="fixed">
+    <Toolbar>
+      <TrendingUpIcon sx={{ mr: 2 }} />
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        Crypto Dashboard
+      </Typography>
+    </Toolbar>
+  </AppBar>
 
-        {/* Cryptocurrency Detailed Analysis */}
-        <Typography variant="h5" component="h1" gutterBottom>
-          Detailed Analysis
-        </Typography>
-        <PriceChart selectedCoin={selectedCoin} />
 
-        {/*Top Gainers and Losers */}
-        <Typography variant="h5" component="h1" gutterBottom sx={{ mt: 6 }}>
-          Market Movers
-        </Typography>
-        <GainersLosersPanel />
+  <Toolbar />
 
-        {/* Footer */}
-        <Box mt={6} pt={3} borderTop={1} borderColor="divider">
-          <Typography variant="body2" color="text.secondary" align="center">
-             Design By Kunal Mehta
-          </Typography>
-        </Box>
-      </Container>
-    </ThemeProvider>
+  {/* Page Content */}
+  <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+    <CoinSelector onSelectCoin={handleSelectCoin} />
+
+    <Typography variant="h5" gutterBottom>
+      Detailed Analysis
+    </Typography>
+    <PriceChart selectedCoin={selectedCoin} />
+
+    <Typography variant="h5" gutterBottom sx={{ mt: 6 }}>
+      Market Movers
+    </Typography>
+    <GainersLosersPanel />
+
+    <Box mt={6} pt={3} borderTop={1} borderColor="divider">
+      <Typography variant="body2" color="text.secondary" align="center">
+        Design By Kunal Mehta
+      </Typography>
+    </Box>
+  </Container>
+</ThemeProvider>
+
   );
 }
 
