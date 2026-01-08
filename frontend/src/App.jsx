@@ -53,7 +53,6 @@ function App() {
 
   <Toolbar />
 
-  {/* Page Content */}
   <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
     <CoinSelector onSelectCoin={handleSelectCoin} />
 
